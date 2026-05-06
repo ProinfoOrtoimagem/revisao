@@ -37,16 +37,6 @@ if %errorlevel% neq 0 (
 echo.
 echo Reparo concluido com sucesso.
 
-:: ******************** AGENDAR LIMPEZA ********************
-set CLEAN_SCRIPT=C:\revisao\Script Limpeza.bat
-
-schtasks /create ^
- /tn "LimpezaPosReparo" ^
- /tr "\"%CLEAN_SCRIPT%\"" ^
- /sc onlogon ^
- /rl HIGHEST ^
- /f
-
 echo Reiniciando em 10 segundos...
 shutdown /r /t 10
 
